@@ -1,0 +1,135 @@
+body {
+    background-color: #b2dbd5;
+    color: white;
+}
+.container {
+    border-radius: 10px;
+    margin-top: 40px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+}
+.collapsible {
+    border-radius: 10px;
+}
+.taskWellNav {
+    font-family: 'Poiret One', cursive;
+    font-size: 200%;
+    background-color: #fa8d62;
+}
+.navItems {
+    display: flex;
+}
+.navLinks {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 50%;
+}
+/* login */
+#autocomplete-input {
+    color: #f7efd7;
+};
+.loginButton {
+    margin: 10px;
+    background-color: #cfd8dc;
+    color: black;
+    border: 2px solid #fff; 
+    border-radius: 10px;
+}
+.loginLink {
+    padding: 10px;
+    text-align: center;
+}
+a:link {
+    color: #eceff1;
+}
+a:visited {
+    color: #eceff1;
+}
+a:hover {
+    color: #cfd8dc;
+}
+a:active {
+    color: #b0bec5;
+}
+.progress {
+    visibility: hidden;
+}
+/* board */
+.board-title {
+    font-family: 'Poiret One', cursive;
+    background-color: #fa8d62;
+    color: #ffffff;
+    text-align: center;
+    padding: .5px;
+}
+.card-title {
+    font-family: 'Poiret One', cursive;
+    color: #2b616d;
+    height: 30px;
+    border-bottom: 1px solid #2b616d;
+}
+.listContainer {
+    border-radius: 500px;
+}
+.due-date {
+    font-family: 'Amatic SC', cursive;
+    /* height: 10px; */
+    font-size: 150%;
+}
+ul:not(.browser-default) {
+    padding-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+ul:not(.browser-default) li {
+    list-style-type: disc;
+    font-family: 'Amatic SC', cursive;
+    font-size: 150%;
+}
+.addList {
+    background-color: #fa8d62;
+}
+.addList:hover {
+    background-color: #fa8d62;
+}
+/* home */
+.cardContainer {
+    overflow: auto;
+    height: 80px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #2b616d; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #2b616d; 
+}
+.addBoard {
+    background-color: #fa8d62;
+}
+                    
+.addBoard:hover {
+    background-color: #fa8d62;
+}
+.addCard {
+    background-color: #fa8d62;
+}
+                    
+.addCard:hover {
+    background-color: #fa8d62;
+}
+/* 
+font-family: 'Amatic SC', cursive;
+font-family: 'Poiret One', cursive;
+ */

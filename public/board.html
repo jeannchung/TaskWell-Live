@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TaskWell Board</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/universal.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <nav class="taskWellNav">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ol class="right hide-on-med-and-down navItems">
+                <li class="navLinks"><a href="#"><i class="material-icons">search</i></a></li>
+                <li class="navLinks">
+                    <a href="#">About</a>
+                </li>
+                <li class="navLinks">
+                    <a href="#">Logout</a>
+                </li>
+            </ol>
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#"><i class="material-icons">search</i></a></li>
+        <li>
+            <a href="#">About</a>
+        </li>
+        <li>
+            <a href="#">Logout</a>
+        </li>
+    </ul>
+    <div class="container board-title">
+        <h5>SCHOOL</h5>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card white darken-1">
+                    <div class="card-content blue-grey-text card-action listContainer">
+                        <div class="row">
+                            <div class="col s2">
+                                <!-- color theme -->
+                            </div>
+                            <div class="col s8">
+                                <a href="#">
+                                    <span class="card-title">Assignment</span>
+                                </a>
+                            </div>
+                            <div class="col s2">
+                                <!-- icon -->
+                            </div>
+                        </div>
+                        <div class="row due-date">
+                            Done by:
+                        </div>
+                        <div class="row cardContainer">
+                            <ul>
+                                <li>GifTastic Project</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                            </ul>
+                        </div>
+                        <a class="btn-floating btn-sm waves-effect waves-light addCard"><i class="material-icons">add</i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card white darken-1">
+                        <div class="card-content blue-grey-text card-action">
+                            <div class="row">
+                                <div class="col s2">
+                                    <!-- color theme -->
+                                </div>
+                                <div class="col s8 ">
+                                    <a href="#">
+                                        <span class="card-title">Tests</span>
+                                    </a>
+                                </div>
+                                <div class="col s2">
+                                    <!-- icon -->
+                                </div>
+                            </div>
+                            <div class="row due-date">
+                                Done by:
+                            </div>
+                            <div class="row cardContainer">
+                                <ul>
+                                    <li>something</li>
+                                    <li>something</li>
+                                    <li>something</li>
+                                    <li>something</li>
+                                    <li>something</li>
+                                </ul>
+                            </div>
+                            <a class="btn-floating btn-sm waves-effect waves-light addCard"><i class="material-icons">add</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-medium addList">
+            <i class="medium material-icons">add</i>
+        </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems, {
+                direction: 'left',
+                hoverEnabled: false
+            });
+        });
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+</body>
+</html>
