@@ -8,6 +8,8 @@ var config = {
     messagingSenderId: "257454357176"
 };
 firebase.initializeApp(config);
+
+
 // FirebaseUI config.
 var uiConfig = {
     signInSuccessUrl: 'home.html',
@@ -24,7 +26,9 @@ var uiConfig = {
     }
 };
 
+
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start('#container', uiConfig);
+
