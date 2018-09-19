@@ -95,3 +95,8 @@ function myFunction() {
         }
     }
 }
+
+// Modal
+$(document).ready(function(){
+    $('.modal').modal();
+  });
