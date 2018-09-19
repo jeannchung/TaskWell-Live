@@ -104,7 +104,7 @@ ul:not(.browser-default) {
     margin-bottom: 15px;
 }
 ul:not(.browser-default) li {
-    list-style-type: disc;
+    list-style-type: none; /* Removed this to get ready of list*/
     font-family: 'Amatic SC', cursive;
     font-size: 150%;
 }
@@ -167,9 +167,7 @@ font-family: 'Poiret One', cursive;
     margin-bottom: 12px; /* Add some space below the input */
     font-family: 'Poiret One', cursive;
 }
-.homeBoardTitle {
-    margin-left: 50px;
-}
+
 ::placeholder {
     color: #2b616d;
     text-align: center;
@@ -181,12 +179,7 @@ font-family: 'Poiret One', cursive;
     font-family: 'Poiret One', cursive;
     }
 
-    #myUL {
-    /* Remove default list styling */
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    }
+   
     
     #myUL li a {
     border: 1px solid #ddd; /* Add a border to all links */
@@ -197,13 +190,12 @@ font-family: 'Poiret One', cursive;
     font-size: 100%; /* Increase the font-size */
     color: black; /* Add a black text color */
     display: block; /* Make it into a block element to fill the whole list */
-    }
-    
+
+}
+
     #myUL li a:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
     }
-
-
   .delete-btn {
     color: #2b616d;
   }
@@ -214,7 +206,7 @@ font-family: 'Poiret One', cursive;
 
   .addboard-btn {
       background-color: #fa8d62;
-      justify-content: center;
+      /* justify-content: center; */
   }
 
   .addboard-btn:hover {
@@ -222,7 +214,7 @@ font-family: 'Poiret One', cursive;
 }
   .create-btn {
       background-color: #fa8d62;
-      justify-content: center;
+      /* justify-content: center; */
   }
 
   .create-btn:hover {
