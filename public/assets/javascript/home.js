@@ -41,9 +41,17 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
 });
 
+// Create New Board
+$('.addboard-btn').on('click', function(){
+    $('.board-form').css('visibility', 'visible')
+    $('.addboard-btn').css('visibility', 'hidden')
+})
+
+
+
 
 // Add Boards
-$('.addboard-btn').on('click', function () {
+$('.create-btn').on('click', function () {
     var boardName = $('.newBoardName').val().trim()
 
     if (boardName !== "" && boardName.length <= 40) {
@@ -53,6 +61,9 @@ $('.addboard-btn').on('click', function () {
           ${boardName}</a></li>
           `)
         $('.newBoardName').val('')
+        $('.addboard-btn').css('visibility', 'visible')
+        $('.board-form').css('visibility', 'hidden')
+        
     }
 
 })

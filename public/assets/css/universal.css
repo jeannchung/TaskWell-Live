@@ -210,3 +210,7 @@ font-family: 'Poiret One', cursive;
   .create-btn:hover {
     background-color: #fa8d62;
 }
+
+.board-form{
+    visibility: hidden;
+}
