@@ -3,55 +3,109 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TaskWell Login</title>
+    <title>TaskWell Items</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/universal.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Poiret+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <div class="row logo">
-            <!-- logo -->
-            <img src="assets/images/taskwellBlack.png" alt="TaskWell" style="width: 350px; length: 150px;">
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div class="input-field col s12">
-                    <input type="email" id="autocomplete-input" class="autocomplete username">
-                    <label for="autocomplete-input">E-mail</label>
+        <nav class="taskWellNav">
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo center">Logo</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ol class="right hide-on-med-and-down navItems">
+                        <li class="navLinks"><a href="#"><i class="material-icons">search</i></a></li>
+                        <li class="navLinks">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="navLinks">
+                            <a href="#">Logout</a>
+                        </li>
+                    </ol>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div class="input-field col s12">
-                    <input type="text" id="autocomplete-input" class="autocomplete password">
-                    <label for="autocomplete-input">Password</label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <a class="waves-effect waves-light btn-small loginButton" id="login-btn">Login</a>
-            <a class="waves-effect waves-light btn-small loginButton" id="signup-btn" href="signup.html">Sign Up</a>
-        </div>
-        <div class="row loginLink">
-            <a href="about.html">About</a> |
-            <a href="contact.html">Contact</a>
-        </div>
-        <div class="progress">
-            <div class="indeterminate"></div>
-        </div>
-    </div>
+            </nav>
+        
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="#"><i class="material-icons">search</i></a></li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Logout</a>
+                </li>
+            </ul>
 
-    <script src='https://code.jquery.com/jquery-3.3.1.js' integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60='
-        crossorigin='anonymous'></script>
+    <div class="container"> 
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header blue-grey-text darken 3"><i class="material-icons">work</i>Work<span class=" badge waves-effect waves-light"><i
+                      class="material-icons">add</i></span></div>
+              </li>
+              <li>
+                <div class="collapsible-header blue-grey-text darken 3"><i class="material-icons">school</i>School<span class=" badge waves-effect waves-light"><i
+                      class="material-icons">add</i></span></div>
+              </li>
+              <li>
+                <div class="collapsible-header blue-grey-text darken 3"><i class="material-icons">local_dining</i>Cooking<span class=" badge waves-effect waves-light"><i
+                      class="material-icons">add</i></span></div>
+              </li>
+            </ul>
+          </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-medium addBoard">
+            <i class="medium material-icons">add</i>
+        </a>
+        <ul>
+            <li>
+                <a class="btn-floating deep-orange darken 1">
+                    <i class="material-icons">Neon</i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-floating deep-orange lighten-1">
+                    <i class="material-icons">Industrial</i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-floating deep-orange lighten-2">
+                    <i class="material-icons">Citrus</i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-floating deep-orange lighten-3">
+                    <i class="material-icons">Retro</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems, {
+                direction: 'left',
+                hoverEnabled: false
+            });
+        });
+
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+        
+        $(document).ready(function () {
+      $('.collapsible').collapsible();
+    });
+    </script>
 </body>
+
 
 </html>
