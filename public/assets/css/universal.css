@@ -19,7 +19,13 @@ body {
 }
 .navItems {
     display: flex;
+    list-style: none;
+    margin-top: 0px;
 }
+.sidenav {
+width: 30%;
+}
+
 .navLinks {
     padding-left: 10px;
     padding-right: 10px;
@@ -63,6 +69,9 @@ a:active {
     text-align: center;
     padding: .5px;
 }
+.list-title {
+    height: 70px;
+}
 .card-title {
     font-family: 'Poiret One', cursive;
     color: #2b616d;
@@ -74,7 +83,7 @@ a:active {
 }
 .due-date {
     font-family: 'Amatic SC', cursive;
-    /* height: 10px; */
+    height: 10px;
     font-size: 150%;
 }
 ul:not(.browser-default) {
