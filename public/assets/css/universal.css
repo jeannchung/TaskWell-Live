@@ -35,11 +35,8 @@ width: 30%;
 #autocomplete-input {
     color: #f7efd7;
 };
-.loginButton {
-    margin: 10px;
-    background-color: #cfd8dc;
-    color: black;
-    border: 2px solid #fff; 
+#login-btn {
+    background-color: #fa8d62; 
     border-radius: 10px;
 }
 .loginLink {
