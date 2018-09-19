@@ -152,15 +152,18 @@ font-family: 'Poiret One', cursive;
     margin-bottom: 12px; /* Add some space below the input */
     font-family: 'Poiret One', cursive;
 }
-    ::placeholder {
-        color: #2b616d;
-        text-align: center;
-        font-family: 'Poiret One', cursive;
+.homeBoardTitle {
+    margin-left: 50px;
+}
+::placeholder {
+    color: #2b616d;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
     }
-    .boardname-label {
-        color: #2b616d;
-        text-align: center;
-        font-family: 'Poiret One', cursive;
+.boardname-label {
+    color: #2b616d;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
     }
 
     #myUL {
