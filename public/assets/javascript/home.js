@@ -52,11 +52,12 @@ $('.addboard-btn').on('click', function(){
 
 // Add Boards
 $('.create-btn').on('click', function () {
+    event.preventDefault()
     var boardName = $('.newBoardName').val().trim()
 
     if (boardName !== "" && boardName.length <= 40) {
         $('#myUL').append(`
-           <li class="collection-item ${boardName}"><a href="#!" class="collection-item Work"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+           <li class="collection-item ${boardName}"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
               data-id="${boardName}">delete</i></span>
           ${boardName}</a></li>
           `)
