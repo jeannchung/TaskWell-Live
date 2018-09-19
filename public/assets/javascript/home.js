@@ -2,35 +2,28 @@
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCG_jjezg8ta2ihiDEmWYdG7PdCkFlwk8o",
-  authDomain: "taskwell-f8bae.firebaseapp.com",
-  databaseURL: "https://taskwell-f8bae.firebaseio.com",
-  projectId: "taskwell-f8bae",
-  storageBucket: "taskwell-f8bae.appspot.com",
-  messagingSenderId: "257454357176"
+    apiKey: "AIzaSyCG_jjezg8ta2ihiDEmWYdG7PdCkFlwk8o",
+    authDomain: "taskwell-f8bae.firebaseapp.com",
+    databaseURL: "https://taskwell-f8bae.firebaseio.com",
+    projectId: "taskwell-f8bae",
+    storageBucket: "taskwell-f8bae.appspot.com",
+    messagingSenderId: "257454357176"
 };
 firebase.initializeApp(config);
 
 
-
-initApp = function () {
-  firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-          // User is signed in.
-          console.log(user.uid)
-      } 
-  }, function (error) {
-      console.log(error)
-  })
-}
-
-window.addEventListener('load', function () {
-  initApp()
-})
+// function writeUserData(userId, name, email) {
+//     firebase.database().ref('users/' + userId).set({
+//         username: name,
+//         email: email,
+//     });
+// }
 
 
 
-  
+
+
+
 // Styles JS
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.fixed-action-btn');
