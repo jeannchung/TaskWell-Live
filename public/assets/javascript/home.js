@@ -63,6 +63,8 @@ $(document).ready(function () {
 
 // Create New Board
 $('.addboard-btn').on('click', function(){
+    $('.theme-imgs').empty()
+    $("#themeChoices").val("TaskWell")
     $('.board-form').css('visibility', 'visible')
     $('.addboard-btn').css('visibility', 'hidden')
 })
@@ -117,3 +119,51 @@ function myFunction() {
 $(document).ready(function () {
     $('select').formSelect();
 });
+
+// Theme Img API
+
+$('.theme-btn').on('click',function(){
+    event.preventDefault()
+    $('.theme-imgs').empty()
+    var themeName = $('#themeChoices :selected').text() + " color"
+    console.log(themeName)
+
+    var data = {
+        url: `http://api.pexels.com/v1/search?query=${themeName}+query&per_page=9&page=1`,
+        headers: {
+            'Authorization': '563492ad6f917000010000010c85c058ec9a487f8c9048dbce19cc42'
+        }
+    }
+
+    $.get(data)
+        .then(function (r) {
+            console.log(r)
+            
+            r.photos.forEach(photo => {
+                var randompic = photo.src.tiny
+                $('.theme-imgs').append(`
+            <div class="col s4">
+            <img style="height:200px ;width:200px; margin:5px"src="${randompic}" alt="" class="theme-img">
+            </div>
+            `)
+            });
+        });
+})
+
+// Storing Theme Img
+
+$(document).on('click', '.theme-img', function(){
+    event.preventDefault()
+    
+    var themeImgURL = $(this).attr('src')
+    
+    console.log(themeImgURL)
+
+    $('.theme-imgs').empty()
+
+    $('.theme-imgs').append(`
+            <div class="col s4">
+            <img style="height:200px ;width:200px; margin:5px"src="${themeImgURL}" alt="" class="theme-img">
+            </div>
+            `)
+})
