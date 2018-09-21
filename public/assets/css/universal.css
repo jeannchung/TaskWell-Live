@@ -163,7 +163,7 @@ font-family: 'Poiret One', cursive;
     width: auto; /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 0px 40px; /* Add some padding */
-    color: #2b616d;
+    color: #2b616d !important;
     margin-bottom: 12px; /* Add some space below the input */
     font-family: 'Poiret One', cursive;
 }
