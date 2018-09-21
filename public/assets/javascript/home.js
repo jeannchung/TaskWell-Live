@@ -12,16 +12,36 @@ var config = {
 firebase.initializeApp(config);
 
 
-// function writeUserData(userId, name, email) {
-//     firebase.database().ref('users/' + userId).set({
-//         username: name,
-//         email: email,
-//     });
-// }
+// variables for reference
+let currentUser = null
+let user = firebase.auth().currentUser
+let ref = firebase.database().ref()
+let userRef = ref.child("users")
+let onComplete = function(error) {
+    if (error) {
+        console.log('Operation failed');
+    } else {
+        console.log(' Operation completed');
+    }
+};
 
 
+// this function runs on page load, sets the current user's email in db to the one they just logged in with
+initApp = function () {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user != null) {
+            let username = user.email.split('@')[0]
+            userRef.child(username).set({
+                email: user.email
 
+            }, onComplete); 
+        }
+    })
+}
 
+window.addEventListener('load', function () {
+    initApp()
+})
 
 
 // Styles JS
@@ -46,8 +66,6 @@ $('.addboard-btn').on('click', function(){
     $('.board-form').css('visibility', 'visible')
     $('.addboard-btn').css('visibility', 'hidden')
 })
-
-
 
 
 // Add Boards
