@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
     <!-- Navi -->
     <nav class="taskWellNav">
@@ -31,7 +33,7 @@
         </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
-            <a href="#">About</a>
+        <a href="#">About</a>
         </li>
         <li>
             <a href="#">Logout</a>
@@ -44,19 +46,19 @@
         </div>
         <div class="row">
             <ul id="myUL">
-                <li class="collection-item Work"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+                <li class="collection-item Work"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
                                 data-id="Work">delete</i></span>
                         Work</a></li>
-                <li class="collection-item School"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+                <li class="collection-item School"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
                                 data-id="School">delete</i></span>
                         School</a></li>
-                <li class="collection-item Cooking"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+                <li class="collection-item Cooking"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
                                 data-id="Cooking">delete</i></span>
                         Cooking</a></li>
-                <li class="collection-item General"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+                <li class="collection-item General"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
                                 data-id="General">delete</i></span>
                         General</a></li>
-                <li class="collection-item General-1"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+                <li class="collection-item General-1"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
                                 data-id="General-1">delete</i></span>
                         General-1</a></li>
             </ul>
@@ -73,8 +75,32 @@
                 <div class="input-field col s12">
                     <input id="input_text" class="newBoardName" type="text" data-length="40">
                     <label for="input_text" class="boardname-label">Board Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <select>
+                        <option value="" disabled selected>Colors</option>
+                        <option value="1" data-id="">TaskWell</option>
+                        <option value="2" data-id="blue color">Blue</option>
+                        <option value="3" data-id="yellow color">Yellow</option>
+                        <option value="4" data-id="green color">Green</option>
+                        <option value="5" data-id="pink color">Pink</option>
+                        <option value="6" data-id="orange color">Orange</option>
+                        <option value="6" data-id="black color">Black</option>
+                        <option value="6" data-id="grey color">Grey</option>
+                        <option value="6" data-id="purple color">Purple</option>
+                        <option value="6" data-id="red color">Red</option>
+                    </select>
+                    <label>Choose Theme</label>
+                </div>
+                <div class="input-field col s6">
+                    <a class="waves-effect waves-light btn">Theme</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
                     <a class="btn-floating btn-sm waves-effect waves-light create-btn"><i class="material-icons">add</i></a>
-                
                 </div>
             </div>
         </form>
@@ -86,4 +112,5 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
     <script src="assets/javascript/home.js"></script>
 </body>
+
 </html>
