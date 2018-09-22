@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TaskWell About</title>
+    <title>Contact TaskWell</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/universal.css">
@@ -24,29 +24,34 @@
             </a>
             <ol class="right hide-on-med-and-down navItems">
                 <li class="navLinks">
-                    <a href="#">About</a>
+                    <a href="about.html">About</a>
                 </li>
                 <li class="navLinks">
-                    <a href="#">Logout</a>
+                    <a href="index.html" id="signOut">Logout</a>
+                      <script>
+                      document.getElementById('signOut').addEventListener('click', function(event) {
+                        firebase.auth().signOut();
+                      });
+                      </script>
                 </li>
             </ol>
-        </div>
+          </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
         <li>
-            <a href="#">About</a>
+            <a href="about.html">About</a>
         </li>
         <li>
-            <a href="#">Logout</a>
+            <a href="index.html" id="signOut">Logout</a>
         </li>
     </ul>
-    <!-- About container -->
+    <!-- Contact container -->
     <div class="container">
         <h1>Contact TaskWell</h1>
         <div class="row">
             <div class="col s4"></div>
             <div class="col s4">
-                <p>TaskWell is developed by<br>
+                <p>TaskWell is developed by:<br>
                   <a href="mailto:Garrett@taskwell.com?subject=TaskWell%20Inquiry">Garrett Fermo</a><br>
                   <a href="mailto:Jean@taskwell.com?subject=TaskWell%20Inquiry">Jean Chung</a><br>
                   <a href="mailto:Joleen@taskwell.com?subject=TaskWell%20Inquiry">Joleen
@@ -61,6 +66,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
+    <script src="assets/javascript/home.js"></script>
 </body>
 
 </html>
