@@ -28,6 +28,11 @@
                 </li>
                 <li class="navLinks">
                     <a href="index.html" id="signOut">Logout</a>
+                    <script>
+                        document.getElementById('signOut').addEventListener('click', function(event) {
+                          firebase.auth().signOut();
+                        });
+                    </script>
                 </li>
             </ol>
         </div>
