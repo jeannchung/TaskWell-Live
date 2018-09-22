@@ -1,5 +1,3 @@
-// Home Java Script
-
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyCG_jjezg8ta2ihiDEmWYdG7PdCkFlwk8o",
@@ -11,36 +9,45 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
 // variables for reference
 let currentUser = null
-let user = firebase.auth().currentUser
 let ref = firebase.database().ref()
 let userRef = ref.child("users")
-let onComplete = function(error) {
+let onComplete = function (error) {
     if (error) {
         console.log('Operation failed');
     } else {
         console.log(' Operation completed');
     }
 };
-
-
-// this function runs on page load, sets the current user's email in db to the one they just logged in with
+//sets current user's username and email
 initApp = function () {
     firebase.auth().onAuthStateChanged(function (user) {
-        if (user != null) {
+        if (user) {
+            currentUser = user
             let username = user.email.split('@')[0]
             userRef.child(username).set({
                 email: user.email
-
-            }, onComplete); 
+            }, onComplete);
         }
     })
 }
-
+//runs on page load
 window.addEventListener('load', function () {
     initApp()
+})
+
+// on click, grabs
+$('#addButton').on('click', function () {
+    currentUser = firebase.auth().currentUser
+    if (currentUser) {
+        let boardRef = userRef.child(currentUser.email.split('@')[0]).child("boards")
+        const newBoardName = document.querySelector("#input_text").value
+        console.log(newBoardName)
+        boardRef.child(newBoardName).set({
+            boardname: newBoardName
+        }, onComplete)
+    }
 })
 
 
