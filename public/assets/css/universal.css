@@ -25,7 +25,10 @@ body {
 .sidenav {
 width: 30%;
 }
-
+/* input styling */
+.mdl-textfield__label {
+    color: #ffffff;
+}
 .navLinks {
     padding-left: 10px;
     padding-right: 10px;
