@@ -44,144 +44,56 @@
         <h5>Example</h5>
     </div>
     <div class="container addList-ctn">
-        <a class="btn-floating btn-large waves-effect waves-light addList-btn"><i class="material-icons">add</i></a>
-        <input id="input_text" name="input_text" class="newListName" type="text" data-length="40">
-        <label for="input_text" class="boardname-label">List Name</label>
-
+        <div class="row">
+            <div class="col s6">
+                <a class="btn-floating btn-large waves-effect waves-light addList-btn"><i class="material-icons">add</i></a>
+            </div>
+            <div class="col s6">
+                <input id="input_text" name="input_text" class="newListName" type="text" data-length="40">
+                <label for="input_text" class="listname-label">List Name</label>
+            </div>
+        </div>
     </div>
 
 
     <div class="container">
-        <ul class="collapsible">
-            <li>
-                <div class="collapsible-header"> List 1 <i style="display:right" class="small material-icons waves-effect delete-btn"
-                        data-id="General-1">delete</i></div>
-                <div class="collection collapsible-body">
-                    <table style="width:100%">
-                        <tr>
-                            <a class="btn-floating btn-large waves-effect waves-light addElement-btn"><i class="material-icons">add</i></a>
-                            <input id="input_text" name="input_text" class="newElementName" type="text" data-length="40">
-                            <label for="input_text" class="boardname-label">Description</label>
-                        </tr>
-                        <tr>
-                            <td>Thing 1</td>
-                            <td><input type="text" class="datepicker"></td>
-                            <td><i class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" />
-                                    <span></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Thing 2</td>
-                            <td><input type="text" class="datepicker"></td>
-                            <td><i class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" />
-                                    <span></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Thing 3</td>
-                            <td><input type="text" class="datepicker"></td>
-                            <td><i class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" />
-                                    <span></span>
-                                </label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header">
-                    List 2<i style="display:right" class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></div>
-                <div class="collection collapsible-body">
-                    <table style="width:100%">
-                        <tr>
-                            <td>Thing 1</td>
-                            <td><input type="text" class="datepicker"></td>
-                            <td><i class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" />
-                                    <span></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Thing 2</td>
-                            <td><input type="text" class="datepicker"></td>
-                            <td><i class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" />
-                                    <span></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Thing 3</td>
-                            <td><input type="text" class="datepicker"></td>
-                            <td><i class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" />
-                                    <span></span>
-                                </label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header">
-                    List 3<i style="display:right" class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></div>
-                <div class="collection collapsible-body">
-                    <table style="width:100%">
-                        <tr>
-                            <td>Thing 1</td>
-                            <td><input type="text" class="datepicker"></td>
-                            <td><i class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" />
-                                    <span></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Thing 2</td>
-                            <td><input type="text" class="datepicker"></td>
-                            <td><i class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" />
-                                    <span></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Thing 3</td>
-                            <td><input type="text" class="datepicker"></td>
-                            <td><i class="small material-icons waves-effect delete-btn" data-id="General-1">delete</i></td>
-                            <td>
-                                <label>
-                                    <input type="checkbox" />
-                                    <span></span>
-                                </label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </li>
-        </ul>
+        <div class="row">
+            <table style="width:100%">
+                <tr class='Thing1'>
+                    <td>Thing 1</td>
+                    <td><input type="text" class="datepicker"></td>
+                    <td><i class="small material-icons waves-effect delete-btn" data-id="Thing1">delete</i></td>
+                    <td>
+                        <label>
+                            <input type="checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr class="Thing2">
+                    <td>Thing 2</td>
+                    <td><input type="text" class="datepicker"></td>
+                    <td><i class="small material-icons waves-effect delete-btn" data-id="Thing2">delete</i></td>
+                    <td>
+                        <label>
+                            <input type="checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr class="Thing3">
+                    <td>Thing 3</td>
+                    <td><input type="text" class="datepicker"></td>
+                    <td><i class="small material-icons waves-effect delete-btn" data-id="Thing3">delete</i></td>
+                    <td>
+                        <label>
+                            <input type="checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 
 
