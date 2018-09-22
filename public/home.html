@@ -10,102 +10,114 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/universal.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Poiret+One" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-        <nav class="taskWellNav">
-                <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo center">Logo</a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                        <i class="material-icons">menu</i>
-                    </a>
-                    <ol class="right hide-on-med-and-down navItems">
-                        <li class="navLinks"><a href="#"><i class="material-icons">search</i></a></li>
-                        <li class="navLinks">
-                            <a href="#">About</a>
-                        </li>
-                        <li class="navLinks">
-                            <a href="#">Logout</a>
-                        </li>
-                    </ol>
-                </div>
-            </nav>
-        
-            <ul class="sidenav" id="mobile-demo">
-                <li><a href="#"><i class="material-icons">search</i></a></li>
-                <li>
+    <!-- Navi -->
+    <nav class="taskWellNav">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ol class="right hide-on-med-and-down navItems">
+                <li class="navLinks">
                     <a href="#">About</a>
                 </li>
-                <li>
+                <li class="navLinks">
                     <a href="#">Logout</a>
                 </li>
+            </ol>
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+        <a href="#">About</a>
+        </li>
+        <li>
+            <a href="#">Logout</a>
+        </li>
+    </ul>
+    <!-- Board List -->
+    <div class="container board-ctn">
+        <div class="row">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Boards">
+        </div>
+        <div class="row">
+            <ul id="myUL">
+                <li class="collection-item Work"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+                                data-id="Work">delete</i></span>
+                        Work</a></li>
+                <li class="collection-item School"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+                                data-id="School">delete</i></span>
+                        School</a></li>
+                <li class="collection-item Cooking"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+                                data-id="Cooking">delete</i></span>
+                        Cooking</a></li>
+                <li class="collection-item General"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+                                data-id="General">delete</i></span>
+                        General</a></li>
+                <li class="collection-item General-1"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+                                data-id="General-1">delete</i></span>
+                        General-1</a></li>
             </ul>
-
-    <div class="container"> 
-            <ul class="collapsible">
-              <li>
-                <div class="collapsible-header blue-grey-text darken 3"><i class="material-icons">work</i>Work<span class=" badge waves-effect waves-light"><i
-                      class="material-icons">add</i></span></div>
-              </li>
-              <li>
-                <div class="collapsible-header blue-grey-text darken 3"><i class="material-icons">school</i>School<span class=" badge waves-effect waves-light"><i
-                      class="material-icons">add</i></span></div>
-              </li>
-              <li>
-                <div class="collapsible-header blue-grey-text darken 3"><i class="material-icons">local_dining</i>Cooking<span class=" badge waves-effect waves-light"><i
-                      class="material-icons">add</i></span></div>
-              </li>
-            </ul>
-          </div>
-
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-medium addBoard">
-            <i class="medium material-icons">add</i>
-        </a>
-        <ul>
-            <li>
-                <a class="btn-floating deep-orange darken 1">
-                    <i class="material-icons">Neon</i>
-                </a>
-            </li>
-            <li>
-                <a class="btn-floating deep-orange lighten-1">
-                    <i class="material-icons">Industrial</i>
-                </a>
-            </li>
-            <li>
-                <a class="btn-floating deep-orange lighten-2">
-                    <i class="material-icons">Citrus</i>
-                </a>
-            </li>
-            <li>
-                <a class="btn-floating deep-orange lighten-3">
-                    <i class="material-icons">Retro</i>
-                </a>
-            </li>
-        </ul>
+        </div>
+        <!-- Add New Board -->
+        <div class="row addaboard">
+            <a class="btn-floating btn-large waves-effect waves-light addboard-btn"><i class="material-icons">add</i></a>
+        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- New Board Form -->
+    <div class="container board-form">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="input_text" name="input_text" class="newBoardName" type="text" data-length="40">
+                    <label for="input_text" class="boardname-label">Board Name</label>
+                </div>
+            </div>
+            <div class="row theme-board">
+                <div class="input-field col s6">
+                    <select id="themeChoices">
+                        <option value="" disabled selected>Colors</option>
+                        <option value="1">TaskWell</option>
+                        <option value="2">Blue</option>
+                        <option value="3">Yellow</option>
+                        <option value="4">Green</option>
+                        <option value="5">Pink</option>
+                        <option value="6">Orange</option>
+                        <option value="7">dark</option>
+                        <option value="8">Grey</option>
+                        <option value="9">Purple</option>
+                        <option value="10">Red</option>
+                    </select>
+                    <label>Choose Theme</label>
+                </div>
+                <div class="input-field col s6">
+                    <a class="waves-effect waves-light btn theme-btn">Theme</a>
+                </div>
+            </div>
+            <div class="row theme-imgs">
+                
+            </div>
+            <div class="row">
+                <div class="col s12">
+
+                    <a class="btn-floating btn-sm waves-effect waves-light create-btn"><i class="material-icons" id="addButton">add</i></a>
+                    <a class="btn-floating btn-sm waves-effect waves-light create-cancel-btn"><i class="material-icons">close</i></a>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.fixed-action-btn');
-            var instances = M.FloatingActionButton.init(elems, {
-                direction: 'left',
-                hoverEnabled: false
-            });
-        });
-
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
-        });
-        
-        $(document).ready(function () {
-      $('.collapsible').collapsible();
-    });
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
+    <script src="assets/javascript/home.js"></script>
 </body>
-
 
 </html>
