@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,9 @@
     <link rel="stylesheet" href="assets/css/universal.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Poiret+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/boards.css">
 </head>
+
 <body>
     <nav class="taskWellNav">
         <div class="nav-wrapper">
@@ -30,103 +33,75 @@
         </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
-            <li>
+        <li>
             <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Logout</a>
-            </li>
-        </ul>
+        </li>
+        <li>
+            <a href="#">Logout</a>
+        </li>
+    </ul>
     <div class="container board-title">
-        <h5>SCHOOL</h5>
+        <h5>Example</h5>
     </div>
-    <div class="container">
+    <div class="container addList-ctn">
         <div class="row">
-            <div class="col s12 m6">
-                <div class="card white darken-1">
-                    <div class="card-content blue-grey-text card-action listContainer">
-                        <div class="row list-title">
-                            <div class="col s2">
-                                <!-- color theme -->
-                            </div>
-                            <div class="col s8">
-                                <a href="#">
-                                    <span class="card-title">Assignment</span>
-                                </a>
-                            </div>
-                            <div class="col s2">
-                                <!-- icon -->
-                            </div>
-                        </div>
-                        <div class="row due-date">
-                            Done by:
-                        </div>
-                        <div class="row cardContainer">
-                            <ul>
-                                <li>GifTastic Project</li>
-                                <li>something</li>
-                                <li>something</li>
-                                <li>something</li>
-                            </ul>
-                        </div>
-                        <a class="btn-floating btn-sm waves-effect waves-light addCard"><i class="material-icons">add</i></a>
-                    </div>
-                </div>
+            <div class="col s6">
+                <a class="btn-floating btn-large waves-effect waves-light addList-btn"><i class="material-icons">add</i></a>
             </div>
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card white darken-1">
-                        <div class="card-content blue-grey-text card-action">
-                            <div class="row list-title">
-                                <div class="col s2">
-                                    <!-- color theme -->
-                                </div>
-                                <div class="col s8 ">
-                                    <a href="#">
-                                        <span class="card-title">Tests</span>
-                                    </a>
-                                </div>
-                                <div class="col s2">
-                                    <!-- icon -->
-                                </div>
-                            </div>
-                            <div class="row due-date">
-                                Done by:
-                            </div>
-                            <div class="row cardContainer">
-                                <ul>
-                                    <li>something</li>
-                                    <li>something</li>
-                                    <li>something</li>
-                                    <li>something</li>
-                                    <li>something</li>
-                                </ul>
-                            </div>
-                            <a class="btn-floating btn-sm waves-effect waves-light addCard"><i class="material-icons">add</i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col s6">
+                <input id="input_text" name="input_text" class="newListName" type="text" data-length="40">
+                <label for="input_text" class="listname-label">List Name</label>
             </div>
         </div>
     </div>
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-medium addList">
-            <i class="medium material-icons">add</i>
-        </a>
+
+
+    <div class="container">
+        <div class="row">
+            <table style="width:100%">
+                <tr class='Thing1'>
+                    <td>Thing 1</td>
+                    <td><input type="text" class="datepicker"></td>
+                    <td><i class="small material-icons waves-effect delete-btn" data-id="Thing1">delete</i></td>
+                    <td>
+                        <label>
+                            <input type="checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr class="Thing2">
+                    <td>Thing 2</td>
+                    <td><input type="text" class="datepicker"></td>
+                    <td><i class="small material-icons waves-effect delete-btn" data-id="Thing2">delete</i></td>
+                    <td>
+                        <label>
+                            <input type="checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr class="Thing3">
+                    <td>Thing 3</td>
+                    <td><input type="text" class="datepicker"></td>
+                    <td><i class="small material-icons waves-effect delete-btn" data-id="Thing3">delete</i></td>
+                    <td>
+                        <label>
+                            <input type="checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.fixed-action-btn');
-            var instances = M.FloatingActionButton.init(elems, {
-                direction: 'left',
-                hoverEnabled: false
-            });
-        });
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
-        });
-    </script>
+    <script src="assets/javascript/board.js"></script>
 </body>
+
 </html>
