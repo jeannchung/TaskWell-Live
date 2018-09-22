@@ -140,7 +140,7 @@ $('.theme-btn').on('click',function(){
             console.log(r)
             
             r.photos.forEach(photo => {
-                var randompic = photo.src.tiny
+                var randompic = photo.src.landscape
                 $('.theme-imgs').append(`
             <div class="col s4">
             <img style="height:200px ;width:200px; margin:5px"src="${randompic}" alt="" class="theme-img">
@@ -151,13 +151,13 @@ $('.theme-btn').on('click',function(){
 })
 
 // Storing Theme Img
-
 $(document).on('click', '.theme-img', function(){
     event.preventDefault()
     
     var themeImgURL = $(this).attr('src')
     
     console.log(themeImgURL)
+
 
     $('.theme-imgs').empty()
 
@@ -166,4 +166,14 @@ $(document).on('click', '.theme-img', function(){
             <img style="height:200px ;width:200px; margin:5px"src="${themeImgURL}" alt="" class="theme-img">
             </div>
             `)
+
+    // $('body').css('background-image', `url('${themeImgURL}')`)
+})
+
+
+// Clear Create Board Button
+
+$('.create-cancel-btn').on('click',function(){
+    $('.addboard-btn').css('visibility', 'visible')
+    $('.board-form').css('visibility', 'hidden')
 })
