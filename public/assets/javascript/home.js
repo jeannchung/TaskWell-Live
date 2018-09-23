@@ -99,7 +99,7 @@ $('.create-btn').on('click', function () {
 
 //Deleting Boards 
 $(document).on('click', '.delete-btn', function () {
-    var dataId = $(this).attr('data-id')
+    var dataId = $(this).attr('data-id').split(' ').join('.')
     $('.collection-item.' + dataId).remove()
 
 })
