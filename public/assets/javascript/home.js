@@ -49,7 +49,7 @@ firebase.auth().onAuthStateChanged(function () {
 
             $('#myUL').append(`
            <li class="collection-item ${value}"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
-              data-id="${value}">delete</i><i onclick="window.location.href='board.html'" class="small material-icons waves-effect" data-id="${value}">add_box</i></span>
+              data-id="${value}">delete</i><i class="small material-icons waves-effect" data-id="${value}">add_box</i></span>
           ${value}</a></li>
           `)
             $('.newBoardName').val('')
@@ -58,6 +58,11 @@ firebase.auth().onAuthStateChanged(function () {
         })
     })
 })
+
+// redirects all new board links
+document.querySelector(".collection-item").onclick = function () {
+    location.href = "board.html";
+};
 
 
 // on click, grabs
@@ -109,7 +114,7 @@ $('.create-btn').on('click', function () {
     if (boardName !== "" && boardName.length <= 40) {
         $('#myUL').append(`
            <li class="collection-item ${boardName}"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
-              data-id="${boardName}">delete</i><i onclick="window.location.href='board.html'" class="small material-icons waves-effect" data-id="${boardName}">add_box</i></span>
+              data-id="${boardName}">delete</i><i class="small material-icons waves-effect" data-id="${boardName}">add_box</i></span>
           ${boardName}</a></li>
           `)
         $('.newBoardName').val('')
