@@ -86,7 +86,7 @@ $('.create-btn').on('click', function () {
     if (boardName !== "" && boardName.length <= 40) {
         $('#myUL').append(`
            <li class="collection-item ${boardName}"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
-              data-id="${boardName}">delete</i></span>
+              data-id="${boardName}">delete</i><i onclick="window.location.href='board.html'" class="small material-icons waves-effect" data-id="${boardName}">add_box</i></span>
           ${boardName}</a></li>
           `)
         $('.newBoardName').val('')
