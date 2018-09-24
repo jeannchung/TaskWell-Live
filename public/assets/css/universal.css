@@ -57,6 +57,10 @@ width: 30%;
     background-color: #fa8d62; 
     border-radius: 10px;
 }
+.mdl-button {
+    background-color: #fa8d62;
+    color: #ffffff;
+}
 .loginLink {
     padding: 10px;
     text-align: center;
