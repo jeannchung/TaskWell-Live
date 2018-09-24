@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 // variables for reference
 let currentUser = null
 let ref = firebase.database().ref()
-let userRef = ref.child("users")
+let usersRef = ref.child("users")
 let onComplete = function (error) {
     if (error) {
         console.log('Operation failed');
@@ -26,22 +26,45 @@ initApp = function () {
         if (user) {
             currentUser = user
             let username = user.email.split('@')[0]
-            userRef.child(username).set({
+            usersRef.child(username).update({
                 email: user.email
             }, onComplete);
         }
     })
 }
+
 //runs on page load
 window.addEventListener('load', function () {
     initApp()
 })
 
+// populate boards from db
+firebase.auth().onAuthStateChanged(function () {
+    currentUser = firebase.auth().currentUser
+    let boardsRef = usersRef.child(currentUser.email.split('@')[0]).child("boards")
+
+    boardsRef.once('value').then(function (boardNames) {
+        boardNames.forEach(function (boardNameValues) {
+            let value = boardNameValues.val().boardname
+
+            $('#myUL').append(`
+           <li class="collection-item ${value}"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
+              data-id="${value}">delete</i><i onclick="window.location.href='board.html'" class="small material-icons waves-effect" data-id="${value}">add_box</i></span>
+          ${value}</a></li>
+          `)
+            $('.newBoardName').val('')
+            $('.addboard-btn').css('visibility', 'visible')
+            $('.board-form').css('visibility', 'hidden')
+        })
+    })
+})
+
+
 // on click, grabs
 $('#addButton').on('click', function () {
     currentUser = firebase.auth().currentUser
     if (currentUser) {
-        let boardRef = userRef.child(currentUser.email.split('@')[0]).child("boards")
+        let boardRef = usersRef.child(currentUser.email.split('@')[0]).child("boards")
         const newBoardName = document.querySelector("#input_text").value
         console.log(newBoardName)
         boardRef.child(newBoardName).set({
@@ -69,7 +92,7 @@ $(document).ready(function () {
 });
 
 // Create New Board
-$('.addboard-btn').on('click', function(){
+$('.addboard-btn').on('click', function () {
     $('.theme-imgs').empty()
     $("#themeChoices").val("TaskWell")
     $('.board-form').css('visibility', 'visible')
@@ -92,7 +115,7 @@ $('.create-btn').on('click', function () {
         $('.newBoardName').val('')
         $('.addboard-btn').css('visibility', 'visible')
         $('.board-form').css('visibility', 'hidden')
-        
+
     }
 
 })
@@ -130,7 +153,7 @@ $(document).ready(function () {
 
 // Theme Img API
 
-$('.theme-btn').on('click',function(){
+$('.theme-btn').on('click', function () {
     event.preventDefault()
     $('.theme-imgs').empty()
     var themeName = $('#themeChoices :selected').text() + " color"
@@ -146,7 +169,7 @@ $('.theme-btn').on('click',function(){
     $.get(data)
         .then(function (r) {
             console.log(r)
-            
+
             r.photos.forEach(photo => {
                 var randompic = photo.src.landscape
                 $('.theme-imgs').append(`
@@ -159,11 +182,11 @@ $('.theme-btn').on('click',function(){
 })
 
 // Storing Theme Img
-$(document).on('click', '.theme-img', function(){
+$(document).on('click', '.theme-img', function () {
     event.preventDefault()
-    
+
     var themeImgURL = $(this).attr('src')
-    
+
     console.log(themeImgURL)
 
 
@@ -181,7 +204,7 @@ $(document).on('click', '.theme-img', function(){
 
 // Clear Create Board Button
 
-$('.create-cancel-btn').on('click',function(){
+$('.create-cancel-btn').on('click', function () {
     $('.addboard-btn').css('visibility', 'visible')
     $('.board-form').css('visibility', 'hidden')
 })
