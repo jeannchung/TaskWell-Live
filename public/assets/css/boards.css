@@ -1,7 +1,30 @@
 body{
   color:black;
+  background-image: url('https://images.pexels.com/photos/168442/pexels-photo-168442.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200');
+  background-repeat: repeat;
+  background-size: cover;
+  
 }
 
-.delete-btn {
-  margin-left: auto;
+.descriptionTitle{
+  width: 60%;
 }
+
+.dueDateTitle{
+  width: 20%;
+}
+
+.deleteTitle{
+  width: 10%;
+}
+
+.CompletedTitle{
+  width:10%;
+}
+
+.board-main-ctn{
+  width: 100%;
+  background-color: rgba(248, 245, 245, 0.7);  
+}
+
+
