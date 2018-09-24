@@ -27,7 +27,7 @@ width: 30%;
 }
 /* input styling */
 .mdl-textfield__label {
-    color: #ffffff;
+    color: #000000;
 }
 .navLinks {
     padding-left: 10px;
@@ -196,7 +196,7 @@ font-family: 'Poiret One', cursive;
     border: 1px solid #ddd; /* Add a border to all links */
     margin-top: -1px; /* Prevent double borders */
     background-color: #f6f6f6; /* Grey background color */
-    padding: 10px 0px 10px 30px; /* Add some padding */
+    padding: 10px 0px 10px 80px; /* Add some padding */
     text-decoration: none; /* Remove default text underline */
     font-size: 100%; /* Increase the font-size */
     color: black; /* Add a black text color */
