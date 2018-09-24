@@ -1,6 +1,6 @@
 body {
     background-color: #b2dbd5;
-    color: white;
+    color: black;
 }
 .container {
     border-radius: 10px;
@@ -61,17 +61,21 @@ width: 30%;
     padding: 10px;
     text-align: center;
 }
+
+a{
+    color: black;
+}
 a:link {
-    color: #eceff1;
+    color: black;
 }
 a:visited {
-    color: #eceff1;
+    color: black;
 }
 a:hover {
-    color: #cfd8dc;
+    color:black;
 }
 a:active {
-    color: #b0bec5;
+    color:black;
 }
 .progress {
     visibility: hidden;
