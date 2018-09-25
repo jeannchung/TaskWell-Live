@@ -162,11 +162,25 @@ ul:not(.browser-default) li {
 .addCard:hover {
     background-color: #fa8d62;
 }
+
+.create-cancel-btn {
+    background-color: #2b616d; 
+}
+.create-cancel-btn:hover {
+    background-color: #2b616d; 
+}
+
+.theme-btn {
+    background-color: #2b616d;   
+}
+.theme-btn:hover {
+    background-color: #2b616d; 
+    color: #ffffff;  
+}
 /* 
 font-family: 'Amatic SC', cursive;
 font-family: 'Poiret One', cursive;
  */
-
 /* Home Page Styles */
   #myInput {
     background-position: 10px 12px; /* Position the search icon */

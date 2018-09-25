@@ -27,4 +27,12 @@ body{
   background-color: rgba(248, 245, 245, 0.7);  
 }
 
+.addList-btn {
+  background-color: #fa8d62;
+}
+.addList-btn:hover {
+  background-color: #fa8d62;
+}
+
+
 
