@@ -101,7 +101,8 @@ $('#addButton').on('click', function () {
         const newBoardName = document.querySelector("#input_text").value
         console.log(newBoardName)
         boardRef.child(newBoardName).set({
-            boardname: newBoardName
+            boardname: newBoardName,
+            themeImg: themeImgURL
         }, onComplete)
     }
 })
@@ -239,11 +240,12 @@ $('.theme-btn').on('click', function () {
         });
 })
 
+var themeImgURL
 // Storing Theme Img
 $(document).on('click', '.theme-img', function () {
     event.preventDefault()
 
-    var themeImgURL = $(this).attr('src')
+    themeImgURL = $(this).attr('src')
 
     console.log(themeImgURL)
 
@@ -255,9 +257,18 @@ $(document).on('click', '.theme-img', function () {
             <img style="height:200px ;width:200px; margin:5px"src="${themeImgURL}" alt="" class="theme-img">
             </div>
             `)
-
-    // $('body').css('background-image', `url('${themeImgURL}')`)
+    currentUser = firebase.auth().currentUser
+    if (currentUser) {
+        let boardRef = usersRef.child(currentUser.email.split('@')[0]).child("boards")
+        const newBoardName = document.querySelector("#input_text").value
+        console.log(newBoardName)
+        boardRef.child(newBoardName).set({
+            boardname: newBoardName,
+            themeImg: themeImgURL
+        }, onComplete)
+    }
 })
+
 
 
 // Clear Create Board Button
@@ -266,3 +277,4 @@ $('.create-cancel-btn').on('click', function () {
     $('.addboard-btn').css('visibility', 'visible')
     $('.board-form').css('visibility', 'hidden')
 })
+
