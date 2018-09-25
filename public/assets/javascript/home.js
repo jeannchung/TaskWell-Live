@@ -50,16 +50,20 @@ firebase.auth().onAuthStateChanged(function () {
 
             $('#myUL').append(`
            <li class="collection-item ${value}">
-            <a class ="homeBoardTitle">
-                <span class="badge">
-                    <i class="small material-icons waves-effect delete-btn" data-id="${value}">
-                        delete
-                    </i>
-                    <i class="small material-icons waves-effect" data-id="${value}">
-                        add_box
-                    </i>
-                </span>
-          ${value}</a></li>
+                <a>
+                    <span class="badge">
+                        <i class="small material-icons waves-effect delete-btn"   data-id="${value}">
+                            delete
+                        </i>
+                        <i class="small material-icons waves-effect" data-id="${value}">
+                            add_box
+                        </i>
+                    </span>
+                    <span class="homeBoardTitle" style="display:block;width:100%">
+                        ${value}
+                    </span>
+                </a>
+            </li>
           `)
             $('.newBoardName').val('')
             $('.addboard-btn').css('visibility', 'visible')
@@ -70,18 +74,27 @@ firebase.auth().onAuthStateChanged(function () {
 
 // redirects all new board links
 // couldnt figure out how to give this attribute to .homeBoardTitle AFTER the html had populated from db
+// this logic isn't working because materialize is overwriting something
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
-  }
-  
-  async function redirect() {
-    await sleep(1000);
+}
+
+async function redirect() {
+    await sleep(1500);
     $(".homeBoardTitle").on('click', function () {
         location.href = "board.html"
     })
-  }
-  redirect();
+}
+redirect();
 
+// function redirect() {
+//     setTimeout(function() {
+//         $(".homeBoardTitle").on('click', function () {
+//             location.href = "board.html"
+//         })
+//     }, 2000)
+// }
+// redirect()
 
 // grabs val of new board and pushes to db
 $('#addButton').on('click', function () {
@@ -94,6 +107,19 @@ $('#addButton').on('click', function () {
             boardname: newBoardName
         }, onComplete)
     }
+})
+
+// delete button removes board from db
+// IT WORKS OMG
+$(document).on('click', '.delete-btn', function () {
+    currentUser = firebase.auth().currentUser
+    let boardsRef = usersRef.child(currentUser.email.split('@')[0]).child("boards")
+    let dataId = this.getAttribute('data-id').split(' ').join('.')
+    targetBoardRef = boardsRef.child(dataId)
+
+    boardsRef.once('value').then(function () {
+            targetBoardRef.remove()
+        })
 })
 
 
@@ -131,9 +157,21 @@ $('.create-btn').on('click', function () {
 
     if (boardName !== "" && boardName.length <= 40) {
         $('#myUL').append(`
-           <li class="collection-item ${boardName}"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
-              data-id="${boardName}">delete</i><i class="small material-icons waves-effect" data-id="${boardName}">add_box</i></span>
-          ${boardName}</a></li>
+            <li class="collection-item ${boardName}">
+                <a>
+                    <span class="badge">
+                        <i class="small material-icons waves-effect delete-btn" data-id="${boardName}">
+                            delete
+                        </i>
+                        <i class="small material-icons waves-effect" data-id="${boardName}">
+                            add_box
+                        </i>
+                    </span>
+                    <span class="homeBoardTitle" style="display:block;width:100%">
+                    ${boardName}
+                    </span>
+                </a>
+            </li>
           `)
         $('.newBoardName').val('')
         $('.addboard-btn').css('visibility', 'visible')
@@ -146,8 +184,8 @@ $('.create-btn').on('click', function () {
 //Deleting Boards 
 $(document).on('click', '.delete-btn', function () {
     var dataId = $(this).attr('data-id').split(' ').join('.')
+    console.log(dataId)
     $('.collection-item.' + dataId).remove()
-
 })
 
 //SEARCH BOARDS
