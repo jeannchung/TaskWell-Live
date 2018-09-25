@@ -55,9 +55,6 @@ firebase.auth().onAuthStateChanged(function () {
                         <i class="small material-icons waves-effect delete-btn"   data-id="${value}">
                             delete
                         </i>
-                        <i class="small material-icons waves-effect" data-id="${value}">
-                            add_box
-                        </i>
                     </span>
                     <span class="homeBoardTitle" style="display:block;width:100%" onclick="redirect()">
                         ${value}
@@ -160,9 +157,6 @@ $('.create-btn').on('click', function () {
                     <span class="badge">
                         <i class="small material-icons waves-effect delete-btn" data-id="${boardName}">
                             delete
-                        </i>
-                        <i class="small material-icons waves-effect" data-id="${boardName}">
-                            add_box
                         </i>
                     </span>
                     <span class="homeBoardTitle" style="display:block;width:100%" onclick="redirect()">
