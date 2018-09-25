@@ -1,8 +1,57 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyCG_jjezg8ta2ihiDEmWYdG7PdCkFlwk8o",
+  authDomain: "taskwell-f8bae.firebaseapp.com",
+  databaseURL: "https://taskwell-f8bae.firebaseio.com",
+  projectId: "taskwell-f8bae",
+  storageBucket: "taskwell-f8bae.appspot.com",
+  messagingSenderId: "257454357176"
+};
+firebase.initializeApp(config);
 
-// Materialize JS
-$(document).ready(function () {
-  $('.collapsible').collapsible();
-});
+let ref = firebase.database().ref()
+let usersRef = ref.child("users")
+let onComplete = function (error) {
+  if (error) {
+    console.log('Operation failed');
+  } else {
+    console.log(' Operation completed');
+  }
+};
+
+
+// dynamically change name of .board-title on load
+// populate page with items from db on load
+// adding items to board also adds to db
+// deleting items from board also deletes from db
+// how to grab name of board that user is currently in???
+
+window.onload = function() {
+  // currentUser = firebase.auth().currentUser
+  // if (currentUser) {
+  //   let boardsRef = usersRef.child(currentUser.email.split('@')[0]).child("boards")
+  //   boardsRef.on("child_added", function (snapshot) {
+  //     let newBoard = snapshot.val()
+  //     document.querySelector('#board-title').innerHTML = String(newBoard)
+  //   })
+  // }
+
+  currentUser = firebase.auth().currentUser
+  if (currentUser) {
+    let boardsRef = usersRef.child(currentUser.email.split('@')[0]).child("boards")
+    boardsRef.orderByChild("boardname/").on('value', function (snapshot) {
+      console.log(snapshot.val())
+      snapshot.forEach(function (childSnapShot) {
+        var key = childSnapShot.key
+        var childData = childSnapShot.val()
+
+        console.log(childData.val().boardname)
+      })
+    })
+  }
+}
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.fixed-action-btn');
@@ -13,17 +62,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 $(document).ready(function () {
   $('.sidenav').sidenav();
+  $('.collapsible').collapsible();
 });
 
 
-$('.addList-btn').on('click', function(){
-
-
+$('.addList-btn').on('click', function () {
   var listName = $('.newListName').val().trim()
 
-  if(listName!==""){
-
-  $('table').append(`
+  if (listName !== "") {
+    $('table').append(`
       <tr class="${listName}">
       <td>${listName}</td>
       <td><input type="date"></td>
@@ -35,17 +82,15 @@ $('.addList-btn').on('click', function(){
       </label>
       </td>
       </tr>
-  `)
-  
-
-  $('.newListName').val('')
+    `)
+    $('.newListName').val('')
   }
 })
 
 //Deleting Boards 
 $(document).on('click', '.delete-btn', function () {
   var dataId = $(this).attr('data-id').split(' ').join('.')
-  $('.' + dataId).remove() 
+  $('.' + dataId).remove()
 
 })
 
