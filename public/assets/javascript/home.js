@@ -59,7 +59,7 @@ firebase.auth().onAuthStateChanged(function () {
                             add_box
                         </i>
                     </span>
-                    <span class="homeBoardTitle" style="display:block;width:100%">
+                    <span class="homeBoardTitle" style="display:block;width:100%" onclick="redirect()">
                         ${value}
                     </span>
                 </a>
@@ -75,26 +75,23 @@ firebase.auth().onAuthStateChanged(function () {
 // redirects all new board links
 // couldnt figure out how to give this attribute to .homeBoardTitle AFTER the html had populated from db
 // this logic isn't working because materialize is overwriting something
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+// function sleep(ms) {
+//     return new Promise(resolve => setTimeout(resolve, ms));
+// }
 
-async function redirect() {
-    await sleep(1500);
+// async function redirect() {
+//     await sleep(1000);
+//     $(".homeBoardTitle").on('click', function () {
+//         location.href = "board.html"
+//     })
+// }
+// redirect();
+
+function redirect() {
     $(".homeBoardTitle").on('click', function () {
         location.href = "board.html"
     })
 }
-redirect();
-
-// function redirect() {
-//     setTimeout(function() {
-//         $(".homeBoardTitle").on('click', function () {
-//             location.href = "board.html"
-//         })
-//     }, 2000)
-// }
-// redirect()
 
 // grabs val of new board and pushes to db
 $('#addButton').on('click', function () {
@@ -118,8 +115,8 @@ $(document).on('click', '.delete-btn', function () {
     targetBoardRef = boardsRef.child(dataId)
 
     boardsRef.once('value').then(function () {
-            targetBoardRef.remove()
-        })
+        targetBoardRef.remove()
+    })
 })
 
 
@@ -167,7 +164,7 @@ $('.create-btn').on('click', function () {
                             add_box
                         </i>
                     </span>
-                    <span class="homeBoardTitle" style="display:block;width:100%">
+                    <span class="homeBoardTitle" style="display:block;width:100%" onclick="redirect()">
                     ${boardName}
                     </span>
                 </a>
