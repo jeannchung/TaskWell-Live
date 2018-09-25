@@ -49,7 +49,7 @@ firebase.auth().onAuthStateChanged(function () {
             let value = boardNameValues.val().boardname
 
             $('#myUL').append(`
-           <li class="collection-item ${value}">
+           <li class="collection-item ${value}" data-id="${value}">
                 <a>
                     <span class="badge">
                         <i class="small material-icons waves-effect delete-btn"   data-id="${value}">
@@ -155,7 +155,7 @@ $('.create-btn').on('click', function () {
 
     if (boardName !== "" && boardName.length <= 40) {
         $('#myUL').append(`
-            <li class="collection-item ${boardName}">
+            <li class="collection-item ${boardName}" data-id="${boardName}">
                 <a>
                     <span class="badge">
                         <i class="small material-icons waves-effect delete-btn" data-id="${boardName}">
@@ -175,6 +175,7 @@ $('.create-btn').on('click', function () {
         $('.addboard-btn').css('visibility', 'visible')
         $('.board-form').css('visibility', 'hidden')
 
+        
     }
 
 })
@@ -257,6 +258,9 @@ $(document).on('click', '.theme-img', function () {
             <img style="height:200px ;width:200px; margin:5px"src="${themeImgURL}" alt="" class="theme-img">
             </div>
             `)
+
+    
+
     currentUser = firebase.auth().currentUser
     if (currentUser) {
         let boardRef = usersRef.child(currentUser.email.split('@')[0]).child("boards")
@@ -278,3 +282,8 @@ $('.create-cancel-btn').on('click', function () {
     $('.board-form').css('visibility', 'hidden')
 })
 
+
+$(document).on('click','.collection-item',function(){
+    console.log($(this).attr('data-id'))
+    localStorage.setItem('BoardName', $(this).attr('data-id'))
+})

@@ -96,3 +96,8 @@ $(document).on('click', '.delete-btn', function () {
 
 
 
+// Local Storage Board Name
+
+var boardName = localStorage.getItem('BoardName')
+$('#board-title').html(boardName)
+
