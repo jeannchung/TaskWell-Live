@@ -18,26 +18,31 @@
     <!-- Navi -->
     <nav class="taskWellNav">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo center">Logo</a>
+                <a href="home.html" class="brand-logo center"><img src="./assets/images/TaskWell-Logo.png" alt="Logo" height="50px" width="180px" style="margin-top:4px"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
             </a>
             <ol class="right hide-on-med-and-down navItems">
                 <li class="navLinks">
-                    <a href="#">About</a>
+                    <a href="about.html">About</a>
                 </li>
                 <li class="navLinks">
-                    <a href="#">Logout</a>
+                    <a href="index.html" id="signOut">Logout</a>
+                    <script>
+                            document.getElementById('signOut').addEventListener('click', function(event) {
+                              firebase.auth().signOut();
+                            });
+                    </script>
                 </li>
             </ol>
         </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
         <li>
-        <a href="#">About</a>
+        <a href="about.html">About</a>
         </li>
         <li>
-            <a href="#">Logout</a>
+            <a href="index.html" id="signOut">Logout</a>
         </li>
     </ul>
     <!-- Board List -->
@@ -47,21 +52,7 @@
         </div>
         <div class="row">
             <ul id="myUL">
-                <li class="collection-item Work"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
-                                data-id="Work">delete</i></span>
-                        Work</a></li>
-                <li class="collection-item School"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
-                                data-id="School">delete</i></span>
-                        School</a></li>
-                <li class="collection-item Cooking"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
-                                data-id="Cooking">delete</i></span>
-                        Cooking</a></li>
-                <li class="collection-item General"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
-                                data-id="General">delete</i></span>
-                        General</a></li>
-                <li class="collection-item General-1"><a href="#!" class="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
-                                data-id="General-1">delete</i></span>
-                        General-1</a></li>
+               
             </ul>
         </div>
         <!-- Add New Board -->
