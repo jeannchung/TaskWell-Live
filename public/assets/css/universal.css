@@ -57,6 +57,10 @@ width: 30%;
     background-color: #fa8d62; 
     border-radius: 10px;
 }
+.mdl-button {
+    background-color: #fa8d62;
+    color: #ffffff;
+}
 .loginLink {
     padding: 10px;
     text-align: center;
@@ -97,18 +101,18 @@ a:active {
     border-radius: 500px;
 }
 .due-date {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Poiret One', cursive;
     height: 10px;
     font-size: 150%;
 }
 ul:not(.browser-default) {
-    padding-left: 30px;
+    /* padding-left: 30px; */
     margin-top: 10px;
     margin-bottom: 15px;
 }
 ul:not(.browser-default) li {
     list-style-type: none; /* Removed this to get ready of list*/
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Poiret One', cursive;
     font-size: 150%;
 }
 .addList {
