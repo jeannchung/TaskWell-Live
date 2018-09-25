@@ -20,7 +20,8 @@ let onComplete = function (error) {
         console.log(' Operation completed');
     }
 };
-//sets current user's username and email
+
+//sets current user's username/email
 initApp = function () {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -33,12 +34,12 @@ initApp = function () {
     })
 }
 
-//runs on page load
+//runs name setter on page load
 window.addEventListener('load', function () {
     initApp()
 })
 
-// populate boards from db
+// populate page with boards from db
 firebase.auth().onAuthStateChanged(function () {
     currentUser = firebase.auth().currentUser
     let boardsRef = usersRef.child(currentUser.email.split('@')[0]).child("boards")
@@ -48,8 +49,16 @@ firebase.auth().onAuthStateChanged(function () {
             let value = boardNameValues.val().boardname
 
             $('#myUL').append(`
-           <li class="collection-item ${value}"><a href="#!" class ="homeBoardTitle"><span class="badge"><i class="small material-icons waves-effect delete-btn"
-              data-id="${value}">delete</i><i class="small material-icons waves-effect" data-id="${value}">add_box</i></span>
+           <li class="collection-item ${value}">
+            <a class ="homeBoardTitle">
+                <span class="badge">
+                    <i class="small material-icons waves-effect delete-btn" data-id="${value}">
+                        delete
+                    </i>
+                    <i class="small material-icons waves-effect" data-id="${value}">
+                        add_box
+                    </i>
+                </span>
           ${value}</a></li>
           `)
             $('.newBoardName').val('')
@@ -60,12 +69,21 @@ firebase.auth().onAuthStateChanged(function () {
 })
 
 // redirects all new board links
-document.querySelector(".collection-item").onclick = function () {
-    location.href = "board.html";
-};
+// couldnt figure out how to give this attribute to .homeBoardTitle AFTER the html had populated from db
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  
+  async function redirect() {
+    await sleep(1000);
+    $(".homeBoardTitle").on('click', function () {
+        location.href = "board.html"
+    })
+  }
+  redirect();
 
 
-// on click, grabs
+// grabs val of new board and pushes to db
 $('#addButton').on('click', function () {
     currentUser = firebase.auth().currentUser
     if (currentUser) {
