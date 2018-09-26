@@ -214,7 +214,7 @@ $('.theme-btn').on('click', function () {
     console.log(themeName)
 
     var data = {
-        url: `http://api.pexels.com/v1/search?query=${themeName}+query&per_page=9&page=1`,
+        url: `https://api.pexels.com/v1/search?query=${themeName}+query&per_page=9&page=1`,
         headers: {
             'Authorization': '563492ad6f917000010000010c85c058ec9a487f8c9048dbce19cc42'
         }
