@@ -257,3 +257,8 @@ font-family: 'Poiret One', cursive;
 .homeBoardTitle {
     width: 100%
 }
+
+.main-ctn{
+    background-color: rgba(248, 245, 245, 0.7);
+    padding: 10px 0px 10px 0px;  
+}
