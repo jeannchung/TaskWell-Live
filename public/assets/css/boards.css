@@ -1,8 +1,8 @@
 body{
   color:black;
-  background-image: url('https://images.pexels.com/photos/168442/pexels-photo-168442.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200');
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: cover;
+  height: 1000px;
   
 }
 
@@ -26,5 +26,13 @@ body{
   width: 100%;
   background-color: rgba(248, 245, 245, 0.7);  
 }
+
+.addList-btn {
+  background-color: #fa8d62;
+}
+.addList-btn:hover {
+  background-color: #fa8d62;
+}
+
 
 

@@ -96,3 +96,19 @@ $(document).on('click', '.delete-btn', function () {
 
 
 
+// Local Storage Board Name and theme Img
+var boardName = localStorage.getItem('BoardName')
+$('#board-title').html(boardName)
+
+
+firebase.auth().onAuthStateChanged(function () {
+  currentUser = firebase.auth().currentUser
+  let boardsRef = usersRef.child(currentUser.email.split('@')[0]).child(`boards/${boardName}`)
+
+  boardsRef.on('value',function(data){
+    var themeImg = data.val().themeImg
+
+    $('body').css('background-image',`url("${themeImg}")`)
+    
+  })
+})

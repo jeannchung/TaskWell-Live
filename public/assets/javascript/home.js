@@ -49,14 +49,11 @@ firebase.auth().onAuthStateChanged(function () {
             let value = boardNameValues.val().boardname
 
             $('#myUL').append(`
-           <li class="collection-item ${value}">
+           <li class="collection-item ${value}" data-id="${value}">
                 <a>
                     <span class="badge">
                         <i class="small material-icons waves-effect delete-btn"   data-id="${value}">
                             delete
-                        </i>
-                        <i class="small material-icons waves-effect" data-id="${value}">
-                            add_box
                         </i>
                     </span>
                     <span class="homeBoardTitle" style="display:block;width:100%" onclick="redirect()">
@@ -101,7 +98,8 @@ $('#addButton').on('click', function () {
         const newBoardName = document.querySelector("#input_text").value
         console.log(newBoardName)
         boardRef.child(newBoardName).set({
-            boardname: newBoardName
+            boardname: newBoardName,
+            themeImg: themeImgURL
         }, onComplete)
     }
 })
@@ -154,14 +152,11 @@ $('.create-btn').on('click', function () {
 
     if (boardName !== "" && boardName.length <= 40) {
         $('#myUL').append(`
-            <li class="collection-item ${boardName}">
+            <li class="collection-item ${boardName}" data-id="${boardName}">
                 <a>
                     <span class="badge">
                         <i class="small material-icons waves-effect delete-btn" data-id="${boardName}">
                             delete
-                        </i>
-                        <i class="small material-icons waves-effect" data-id="${boardName}">
-                            add_box
                         </i>
                     </span>
                     <span class="homeBoardTitle" style="display:block;width:100%" onclick="redirect()">
@@ -174,6 +169,7 @@ $('.create-btn').on('click', function () {
         $('.addboard-btn').css('visibility', 'visible')
         $('.board-form').css('visibility', 'hidden')
 
+        
     }
 
 })
@@ -239,11 +235,12 @@ $('.theme-btn').on('click', function () {
         });
 })
 
+var themeImgURL
 // Storing Theme Img
 $(document).on('click', '.theme-img', function () {
     event.preventDefault()
 
-    var themeImgURL = $(this).attr('src')
+    themeImgURL = $(this).attr('src')
 
     console.log(themeImgURL)
 
@@ -256,8 +253,20 @@ $(document).on('click', '.theme-img', function () {
             </div>
             `)
 
-    // $('body').css('background-image', `url('${themeImgURL}')`)
+    
+
+    currentUser = firebase.auth().currentUser
+    if (currentUser) {
+        let boardRef = usersRef.child(currentUser.email.split('@')[0]).child("boards")
+        const newBoardName = document.querySelector("#input_text").value
+        console.log(newBoardName)
+        boardRef.child(newBoardName).set({
+            boardname: newBoardName,
+            themeImg: themeImgURL
+        }, onComplete)
+    }
 })
+
 
 
 // Clear Create Board Button
@@ -265,4 +274,10 @@ $(document).on('click', '.theme-img', function () {
 $('.create-cancel-btn').on('click', function () {
     $('.addboard-btn').css('visibility', 'visible')
     $('.board-form').css('visibility', 'hidden')
+})
+
+
+$(document).on('click','.collection-item',function(){
+    console.log($(this).attr('data-id'))
+    localStorage.setItem('BoardName', $(this).attr('data-id'))
 })
