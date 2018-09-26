@@ -1,0 +1,264 @@
+body {
+    background-color: #b2dbd5;
+    color: black;
+}
+.container {
+    border-radius: 10px;
+    margin-top: 40px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+}
+.collapsible {
+    border-radius: 10px;
+}
+.taskWellNav {
+    font-family: 'Poiret One', cursive;
+    font-size: 200%;
+    background-color: #fa8d62;
+}
+.navItems {
+    display: flex;
+    list-style: none;
+    margin-top: 0px;
+}
+.sidenav {
+width: 30%;
+}
+/* input styling */
+.mdl-textfield__label {
+    color: #000000;
+}
+.navLinks {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 50%;
+}
+/* label color */
+.input-field label {
+    color: #000000;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #000000;
+  }
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 1px 0 0 #000000;
+  }
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 1px 0 0 #000000;
+  }
+/* login */
+#login-btn {
+    background-color: #fa8d62; 
+    border-radius: 10px;
+}
+.mdl-button {
+    background-color: #fa8d62;
+    color: #ffffff;
+}
+.loginLink {
+    padding: 10px;
+    text-align: center;
+}
+
+a{
+    color: black;
+}
+a:link {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color:black;
+}
+a:active {
+    color:black;
+}
+.progress {
+    visibility: hidden;
+}
+/* board */
+.board-title {
+    font-family: 'Poiret One', cursive;
+    background-color: #fa8d62;
+    color: #ffffff;
+    text-align: center;
+    padding: .5px;
+}
+.list-title {
+    height: 70px;
+}
+.card-title {
+    font-family: 'Poiret One', cursive;
+    color: #2b616d;
+    height: 30px;
+    border-bottom: 1px solid #2b616d;
+}
+.listContainer {
+    border-radius: 500px;
+}
+.due-date {
+    font-family: 'Poiret One', cursive;
+    height: 10px;
+    font-size: 150%;
+}
+ul:not(.browser-default) {
+    /* padding-left: 30px; */
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+ul:not(.browser-default) li {
+    list-style-type: none; /* Removed this to get ready of list*/
+    font-family: 'Poiret One', cursive;
+    font-size: 150%;
+}
+.addList {
+    background-color: #fa8d62;
+}
+.addList:hover {
+    background-color: #fa8d62;
+}
+/* home */
+
+.cardContainer {
+    overflow: auto;
+    height: 80px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #2b616d; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #2b616d; 
+}
+.addBoard {
+    background-color: #fa8d62;
+}
+                    
+.addBoard:hover {
+    background-color: #fa8d62;
+}
+.addCard {
+    background-color: #fa8d62;
+}
+                    
+.addCard:hover {
+    background-color: #fa8d62;
+}
+
+.create-cancel-btn {
+    background-color: #2b616d; 
+}
+.create-cancel-btn:hover {
+    background-color: #2b616d; 
+}
+
+.theme-btn {
+    background-color: #2b616d;   
+}
+.theme-btn:hover {
+    background-color: #2b616d; 
+    color: #ffffff;  
+}
+/* 
+font-family: 'Amatic SC', cursive;
+font-family: 'Poiret One', cursive;
+ */
+/* Home Page Styles */
+  #myInput {
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: auto; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 10px 0px 10px; /* Add some padding */
+    color: #2b616d !important;
+    margin-bottom: 12px; /* Add some space below the input */
+    font-family: 'Poiret One', cursive;
+}
+
+::placeholder {
+    color: #2b616d;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    }
+.boardname-label {
+    color: #2b616d;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    }
+
+   
+    
+    #myUL li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 10px 0px 10px 80px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 100%; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+
+}
+
+    #myUL li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+    }
+  .delete-btn {
+    color: #2b616d;
+  }
+  
+  .addaboard{
+    text-align: center;
+  }
+
+  .addboard-btn {
+      background-color: #fa8d62;
+      /* justify-content: center; */
+  }
+
+  .addboard-btn:hover {
+    background-color: #fa8d62;
+}
+  .create-btn {
+      background-color: #fa8d62;
+      /* justify-content: center; */
+  }
+
+  .create-btn:hover {
+    background-color: #fa8d62;
+}
+
+.board-form{
+    visibility: hidden;
+}
+
+.quote-section{
+    font-size: 20px
+}
+
+.homeBoardTitle {
+    width: 100%
+}
+
+.main-ctn{
+    background-color: rgba(248, 245, 245, 0.7);
+    padding: 10px 0px 10px 0px;  
+}

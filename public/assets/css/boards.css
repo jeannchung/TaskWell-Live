@@ -1,0 +1,38 @@
+body{
+  color:black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+  
+}
+
+.descriptionTitle{
+  width: 60%;
+}
+
+.dueDateTitle{
+  width: 20%;
+}
+
+.deleteTitle{
+  width: 10%;
+}
+
+.CompletedTitle{
+  width:10%;
+}
+
+.board-main-ctn{
+  width: 100%;
+  background-color: rgba(248, 245, 245, 0.7);  
+}
+
+.addList-btn {
+  background-color: #fa8d62;
+}
+.addList-btn:hover {
+  background-color: #fa8d62;
+}
+
+
+
